@@ -1,12 +1,9 @@
-const activities = document.getElementById("activities").value;
+const activities = document.getElementById("activities");
 let dateTimeValue = document.getElementById('datetime');
 
 function isEmpty(){
-    if(activities == ''){
-        alert("Please Enter A Task");
-        return false;
-    }else if(dateTimeValue === ''){
-        alert("Please Enter A Date");
+    if(activities == '' && Date.parse(dateTimeValue) == null){
+        alert("Please Enter All The Fields");
         return false;
     }
 
