@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="heading">To Do List</h1>
+      <h3 class="sub-heading">Add Your Tasks Here</h3>
+
+      <input
+        type="text"
+        class="tasks"
+        placeholder="Activities You Want To Add"
+        id="activities"
+      />
+
+      <input
+        type="datetime-local"
+        class="date-input"
+        id="datetime"
+        name="datetime"
+      />
+
+      <div class="button-section">
+        <button class="add" onclick="add()" type="submit">Add</button>
+        <button class="add" id="update" onclick="add()" type="submit">
+          Update
+        </button>
+      </div>
+
+      <table class="tasks-table">
+        <tr>
+          <th>Tasks</th>
+          <th>Date & Time</th>
+          <th>Actions</th>
+        </tr>
+        <tr>
+          <td>Task 1</td>
+          <td>Action 1</td>
+          <td>Action 1</td>
+        </tr>
+        <tr>
+          <td>Task 2</td>
+          <td>Action 2</td>
+          <td>Action 2</td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="sctipt.js"></script>
+  </body>
+</html>
