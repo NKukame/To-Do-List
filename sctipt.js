@@ -31,7 +31,7 @@ function displayData() {
         html += "<td>" + element.dateTimeValue + "</td>";
         html += '<td><button onclick="deleteData(' +
             index +
-            ')" class= "delete">Delete</button><button onclick="deleteData(' + index + ')" class= "edit">Edit</button></td>';
+            ')" class= "delete">Delete</button><button onclick="updateData(' + index + ')" class= "edit">Edit</button></td>';
         html += "</tr>";
     });
 
@@ -56,15 +56,63 @@ function add() {
         }
 
         list.push({
-            activities : activities,
-            dateTimeValue : dateTimeValue,
+            activities: activities,
+            dateTimeValue: dateTimeValue,
         });
 
         localStorage.setItem("list", JSON.stringify
-        (list));
+            (list));
         displayData();
         document.getElementById("activities").value = "";
         document.getElementById("datetime").value = "";
     }
 
+}
+
+function deleteData(index) {
+    var list;
+
+    if (localStorage.getItem("list") == null) {
+        list = [];
+    } else {
+        list = JSON.parse(localStorage.getItem("list"));
+    }
+
+    list.splice(index, 1);
+    localStorage.setItem("list", JSON.stringify
+        (list));
+    displayData();
+}
+
+function updateData(index){
+    document.getElementById("add").style.display = "none";
+    document.getElementById("update").style.display = "block";
+
+    var list;
+
+    if (localStorage.getItem("list") == null) {
+        list = [];
+    } else {
+        list = JSON.parse(localStorage.getItem("list"));
+    }
+
+    document.getElementById("activities").value = list[index].activities;
+    document.getElementById("datetime").value = list[index].dateTimeValue;
+
+    document.querySelector("#update").onclick = function(){
+        if(isEmpty()){
+            list[index].activities = document.getElementById("activities").value;
+            list[index].dateTimeValue = document.getElementById("datetime").value;
+
+            localStorage.setItem("list", JSON.stringify
+                (list));
+            displayData();
+
+            document.getElementById("activities").value = "";
+            document.getElementById("datetime").value = "";
+
+            document.getElementById("add").style.display = "block";
+            document.getElementById("update").style.display = "none";
+        }
+    }
 }
