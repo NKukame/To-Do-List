@@ -76,7 +76,7 @@
 
 .add{
     color: white;
-    background-color: var(--red);
+    background-color: var(--lightgrey);
     width: 180px;
     height: 40px;
     border-radius: 25px;
@@ -117,7 +117,24 @@
     padding: 10px;
 }
 
-
 .tasks-table td:hover{
     background-color: var(--lightgrey);
+}
+
+.delete, .edit{
+    width: 45%;
+    height: 30px;
+    background-color: var(--red);
+    border-radius: 25px;
+    border: var(--brown) 3px solid;
+    margin-right: 5%;
+    color: white;
+}
+
+.edit{
+    background-color: var(--blue);
+}
+
+.delete:hover, .edit:hover{
+    background-color: var(--brown);
 }
