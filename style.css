@@ -76,7 +76,7 @@
 
 .add{
     color: white;
-    background-color: var(--lightgrey);
+    background-color: var(--brown);
     width: 180px;
     height: 40px;
     border-radius: 25px;
@@ -86,7 +86,7 @@
 }
 
 .add:hover{
-    background-color: var(--brown);
+    background-color: var(--lightgrey);
 }
 
 .tasks-table{
